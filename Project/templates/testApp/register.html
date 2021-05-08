@@ -1,0 +1,61 @@
+{% extends 'testApp/base.html' %}
+{% block body %}
+
+{% load crispy_forms_tags %}
+<!--Contact form-->
+<div class="content-section">
+ <form method="post">
+      {% csrf_token %}
+      {% load crispy_forms_tags %}
+      <!--Contact form-->
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Join Today</legend>
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+            {{form.first_name|as_crispy_field}}
+            </div>
+    </div>
+            <div class="row">
+              <div class="col-lg-6 col-md-12">
+                  {{form.last_name|as_crispy_field}}
+                  </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+                {{form.email|as_crispy_field}}
+                </div>
+        </div>
+      <div class="row">
+          <div class="col-lg-6 col-md-12">
+              {{form.username|as_crispy_field}}
+              </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+            {{form.password|as_crispy_field}}
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            {{form.phone|as_crispy_field}}
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            {{form.role|as_crispy_field}}
+            </div>
+    </div>
+      <div class="row">
+      <div class="col-lg-6 col-md-12">
+          <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </div>
+   </div>
+    </form> </fieldset>
+ </div>
+
+ <div class="border-top pt-2">
+    <small class="text-muted">
+        Already Have An Account? <a class="ml-2" href="/accounts/login/">Sign In</a>
+    </small>
+        </div>
+{% endblock %}
